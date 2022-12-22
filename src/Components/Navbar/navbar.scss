@@ -1,0 +1,244 @@
+#navbar {
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 0;
+
+    .logo {
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+
+      .logo1,
+      .logo2 {
+        color: white;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1em;
+      }
+
+      .logo2 {
+        margin-left: 50px;
+      }
+    }
+
+    .hamburger-menu {
+      color: white;
+      display: none;
+    }
+
+    .collapsed {
+      .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style-type: none;
+        transition: 1s ease;
+
+        &.is-expended {}
+
+        .nav-item {
+          padding-left: 20px;
+
+          .nav-link {
+            padding: 40px 17px;
+            color: #fff;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 23px;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import './__responsive.sass';
+
+@media (max-width: 810px) {
+  #navbar {
+    nav {
+      padding: 20px;
+      justify-content: space-between;
+
+
+      .hamburger-menu {
+        color: white;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        z-index: 100001;
+      }
+
+      .collapsed {
+        z-index: 100000;
+
+        .navbar-nav {
+          border: 1px solid rgb(87, 87, 87);
+          box-shadow: rgb(87, 87, 87) 1px 1px 10px 10px;
+          display: none;
+
+          &.is-expended {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: auto;
+            padding-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+            list-style-type: none;
+            background: #000;
+            transition: 1s ease;
+          }
+
+          .nav-item {
+            padding-top: 20px;
+
+            .nav-link {
+              color: #fff;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 5px;
+              text-decoration: none;
+              width: 200px;
+              padding: 35px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  #navbar {
+    nav {
+      .logo {
+
+        .logo1,
+        .logo2 {
+          font-size: 20px;
+        }
+
+        .logo2 {
+          margin-left: 20px;
+
+        }
+      }
+
+      .collapsed {
+        .navbar-nav {
+          &.is-expended {
+            width: 410px;
+          }
+
+          .nav-item {
+
+            .nav-link,
+            .active {
+              padding: 30px;
+              width: 150px;
+              font-size: 15px;
+
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+@media (max-width: 375px) {
+  #navbar {
+    nav {
+      .logo {
+
+        .logo1,
+        .logo2 {
+          font-size: 20px;
+        }
+
+        .logo2 {
+          margin-left: 20px;
+
+        }
+      }
+
+      .collapsed {
+        .navbar-nav {
+          &.is-expended {
+            width: 360px;
+          }
+
+          .nav-item {
+
+            .nav-link,
+            .active {
+              padding: 25px;
+              width: 150px;
+              font-size: 15px;
+
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 320px) {
+  #navbar {
+    nav {
+      .logo {
+
+        .logo1,
+        .logo2 {
+          font-size: 15px;
+        }
+
+        .logo2 {
+          margin-left: 20px;
+
+        }
+      }
+
+      .collapsed {
+        .navbar-nav {
+          &.is-expended {
+            width: 350px;
+          }
+
+          .nav-item {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
